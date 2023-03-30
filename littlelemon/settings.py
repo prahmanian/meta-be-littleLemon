@@ -75,10 +75,22 @@ WSGI_APPLICATION = "littlelemon.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # },
+    'default': {  
+        'ENGINE': 'django.db.backends.mysql',  
+        'NAME': 'LittleLemon',  
+        'USER': 'adminLittleLemon',  
+        'PASSWORD': 'falafel$69!',  
+        'HOST': '127.0.0.1',  
+        'PORT': '3306',  
+        'OPTIONS': {
+            #  handles invalid or missing values from being stored in the database by INSERT and UPDATE statements. 
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
+        }  
+    }  
 }
 
 
